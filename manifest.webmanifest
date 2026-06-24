@@ -1,0 +1,1 @@
+{"name":"보드게임 헬퍼","short_name":"보드헬퍼","description":"보드게임 플레이를 돕는 모바일 PWA 도구 모음","start_url":"./","display":"standalone","background_color":"#07111f","theme_color":"#07111f","lang":"en","scope":"./","icons":[{"src":"pwa.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
