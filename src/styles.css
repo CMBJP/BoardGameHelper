@@ -14,6 +14,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  min-height: 100dvh;
   background:
     linear-gradient(180deg, rgba(57, 217, 255, 0.1), transparent 220px),
     #07111f;
@@ -70,8 +71,9 @@ h3 {
 .app-shell {
   width: min(100%, 880px);
   min-height: 100vh;
+  min-height: 100dvh;
   margin: 0 auto;
-  padding: env(safe-area-inset-top) 14px 28px;
+  padding: env(safe-area-inset-top) max(14px, env(safe-area-inset-left)) max(28px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-right));
 }
 
 .app-header {
@@ -321,7 +323,7 @@ h3 {
 }
 
 .wheel {
-  width: min(100%, 340px);
+  width: min(100%, 340px, 72dvh);
   aspect-ratio: 1;
   transition: transform 3.8s cubic-bezier(0.12, 0.78, 0.16, 1);
 }
@@ -456,6 +458,136 @@ h3 {
   .form-grid,
   .dual-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (orientation: landscape) and (max-height: 560px) {
+  .app-shell {
+    width: min(100%, 1040px);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .app-header {
+    min-height: 48px;
+  }
+
+  .app-header h1 {
+    font-size: 1.05rem;
+  }
+
+  .home-screen,
+  .tool-screen {
+    gap: 10px;
+  }
+
+  .tool-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding-top: 6px;
+  }
+
+  .menu-card {
+    min-height: 96px;
+    padding: 14px;
+  }
+
+  .menu-card span {
+    font-size: 1rem;
+  }
+
+  .menu-card small {
+    font-size: 0.78rem;
+  }
+
+  .tool-screen {
+    grid-template-columns: minmax(260px, 0.95fr) minmax(320px, 1.35fr);
+    align-items: start;
+  }
+
+  .panel {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .panel h2 {
+    font-size: 1.05rem;
+  }
+
+  .result-panel,
+  .wheel-panel,
+  .timer-board {
+    position: sticky;
+    top: 54px;
+  }
+
+  .dice-results {
+    min-height: 52px;
+    gap: 8px;
+  }
+
+  .dice-results span {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .large-result {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+  }
+
+  .history-list {
+    max-height: 34dvh;
+    overflow: auto;
+  }
+
+  .dual-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ladder-svg {
+    min-height: 0;
+    height: min(68dvh, 320px);
+  }
+
+  .result-list {
+    max-height: 30dvh;
+    overflow: auto;
+  }
+
+  .wheel {
+    width: min(58dvh, 300px);
+  }
+
+  .timer-board {
+    grid-template-columns: minmax(320px, 1fr) minmax(170px, 0.45fr);
+    align-items: stretch;
+  }
+
+  .turn-touch {
+    min-height: calc(100dvh - 82px);
+  }
+
+  .turn-touch strong {
+    font-size: clamp(2rem, 8vw, 4.2rem);
+  }
+
+  .turn-touch em {
+    font-size: clamp(1.8rem, 7vw, 3.5rem);
+  }
+
+  .timer-controls {
+    align-content: start;
+  }
+
+  .timer-controls > button {
+    flex: 1 1 100%;
+  }
+
+  .player-strip {
+    grid-column: 2;
+    max-height: 46dvh;
+    overflow: auto;
   }
 }
 
