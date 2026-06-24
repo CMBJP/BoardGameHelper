@@ -591,6 +591,136 @@ h3 {
   }
 }
 
+@media (max-height: 560px) {
+  .app-shell[data-orientation='landscape'] {
+    width: min(100%, 1040px);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .app-shell[data-orientation='landscape'] .app-header {
+    min-height: 48px;
+  }
+
+  .app-shell[data-orientation='landscape'] .app-header h1 {
+    font-size: 1.05rem;
+  }
+
+  .app-shell[data-orientation='landscape'] .home-screen,
+  .app-shell[data-orientation='landscape'] .tool-screen {
+    gap: 10px;
+  }
+
+  .app-shell[data-orientation='landscape'] .tool-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding-top: 6px;
+  }
+
+  .app-shell[data-orientation='landscape'] .menu-card {
+    min-height: 96px;
+    padding: 14px;
+  }
+
+  .app-shell[data-orientation='landscape'] .menu-card span {
+    font-size: 1rem;
+  }
+
+  .app-shell[data-orientation='landscape'] .menu-card small {
+    font-size: 0.78rem;
+  }
+
+  .app-shell[data-orientation='landscape'] .tool-screen {
+    grid-template-columns: minmax(260px, 0.95fr) minmax(320px, 1.35fr);
+    align-items: start;
+  }
+
+  .app-shell[data-orientation='landscape'] .panel {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .app-shell[data-orientation='landscape'] .panel h2 {
+    font-size: 1.05rem;
+  }
+
+  .app-shell[data-orientation='landscape'] .result-panel,
+  .app-shell[data-orientation='landscape'] .wheel-panel,
+  .app-shell[data-orientation='landscape'] .timer-board {
+    position: sticky;
+    top: 54px;
+  }
+
+  .app-shell[data-orientation='landscape'] .dice-results {
+    min-height: 52px;
+    gap: 8px;
+  }
+
+  .app-shell[data-orientation='landscape'] .dice-results span {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .app-shell[data-orientation='landscape'] .large-result {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+  }
+
+  .app-shell[data-orientation='landscape'] .history-list {
+    max-height: 34dvh;
+    overflow: auto;
+  }
+
+  .app-shell[data-orientation='landscape'] .dual-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .app-shell[data-orientation='landscape'] .ladder-svg {
+    min-height: 0;
+    height: min(68dvh, 320px);
+  }
+
+  .app-shell[data-orientation='landscape'] .result-list {
+    max-height: 30dvh;
+    overflow: auto;
+  }
+
+  .app-shell[data-orientation='landscape'] .wheel {
+    width: min(58dvh, 300px);
+  }
+
+  .app-shell[data-orientation='landscape'] .timer-board {
+    grid-template-columns: minmax(320px, 1fr) minmax(170px, 0.45fr);
+    align-items: stretch;
+  }
+
+  .app-shell[data-orientation='landscape'] .turn-touch {
+    min-height: calc(100dvh - 82px);
+  }
+
+  .app-shell[data-orientation='landscape'] .turn-touch strong {
+    font-size: clamp(2rem, 8vw, 4.2rem);
+  }
+
+  .app-shell[data-orientation='landscape'] .turn-touch em {
+    font-size: clamp(1.8rem, 7vw, 3.5rem);
+  }
+
+  .app-shell[data-orientation='landscape'] .timer-controls {
+    align-content: start;
+  }
+
+  .app-shell[data-orientation='landscape'] .timer-controls > button {
+    flex: 1 1 100%;
+  }
+
+  .app-shell[data-orientation='landscape'] .player-strip {
+    grid-column: 2;
+    max-height: 46dvh;
+    overflow: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

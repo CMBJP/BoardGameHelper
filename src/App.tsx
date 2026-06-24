@@ -6,6 +6,7 @@ import { DiceTool } from './features/dice/DiceTool';
 import { LadderTool } from './features/ladder/LadderTool';
 import { TimerTool } from './features/timer/TimerTool';
 import { WheelTool } from './features/wheel/WheelTool';
+import { useViewportOrientation } from './hooks/useViewportOrientation';
 import type { ToolId, ToolInfo } from './types';
 
 const tools: ToolInfo[] = [
@@ -17,10 +18,11 @@ const tools: ToolInfo[] = [
 
 export default function App() {
   const [activeTool, setActiveTool] = useState<ToolId>('home');
+  const orientation = useViewportOrientation();
 
   return (
     <ErrorBoundary>
-      <div className="app-shell">
+      <div className="app-shell" data-orientation={orientation}>
         <Header activeTool={activeTool} onHome={() => setActiveTool('home')} />
         {activeTool === 'home' && (
           <main className="home-screen">
